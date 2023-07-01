@@ -1,0 +1,81 @@
+plugins {
+    id 'com.android.application'
+    //firebase plugins
+    id 'com.google.gms.google-services'
+
+}
+
+android {
+    namespace 'com.section34.journalApp'
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "com.section34.journalApp"
+        minSdk 23
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+
+
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+}
+
+
+
+dependencies {
+
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.5.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'junit:junit:4.13.2'
+    implementation 'com.google.firebase:firebase-firestore:24.6.1'
+    implementation 'com.google.firebase:firebase-appcheck:17.0.1'
+    implementation 'com.google.firebase:firebase-appcheck-debug:17.0.1'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+
+    // Firebase authentication
+    implementation 'com.google.firebase:firebase-analytics'
+    implementation 'com.google.firebase:firebase-auth'
+
+    //firebase
+    implementation platform('com.google.firebase:firebase-bom:32.1.1')
+    implementation 'com.google.firebase:firebase-firestore'
+    //storage
+    implementation 'com.google.firebase:firebase-storage'
+
+    implementation 'androidx.multidex:multidex:2.0.1'
+
+
+
+    // Firebase App Check with Play Integrity provider
+    implementation("com.google.firebase:firebase-appcheck-playintegrity:17.0.1")
+    implementation 'com.google.android.play:integrity'
+    implementation 'com.google.firebase:firebase-appcheck-debug:17.0.1'
+
+    //Glide
+    implementation 'com.github.bumptech.glide:glide:4.15.1'
+
+    //google signing
+    implementation("com.google.android.gms:play-services-auth:20.6.0")
+
+
+}
